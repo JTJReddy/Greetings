@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+     background-image: url('bcimage.jpeg');
+     background-size: cover;
+    }
+    .page {
+      display: none;
+      padding: 20px;
+    }
+    audio {
+      display: none;
+    }
+    #page1 {
+      display: block;
+      background-color: lightblue;
+    }
+#page2{
+background-color: lightpink;
+}
+#page3{
+background-color:violet;
+}
+#page4{
+background-color:tomato;
+}
+#page5{
+background-color: lightgreen;
+}
+
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+   .container {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+  </style>
+</head>
+<body onload="playMusic()">
+  <div class="container">
+  <div class="page" id="page1">
+    <h1>Happy Birthday!</h1>
+    <p>Wishing you a fantastic day filled with joy and laughter!</p>
+  </div>
+  <div class="page" id="page2">
+    <h1>Happy Birthday!</h1>
+    <p>You may be the queen today but remember who wears the crown the other 364 days of the year! Happy Birthday</p>
+  </div>
+  <div class="page" id="page3">
+    <h1>Happy Birthday!</h1>
+    <p>You may be the Older, but I'll always be the smartest!</p>
+    <p>You may be the older Sister, but you know who's the boss! Happy Birthday</p>
+  </div>
+  <div class="page" id="page4">
+    <h1>Happy Birthday!</h1>
+    <p>I can't imagine my life without you. You've been my trusted protector since day one and for that I'm forever greatful. Wishing you the best Birthday yet.</p>
+  </div>
+  <div class="page" id="page5">
+    <h1>Happy Birthday!</h1>
+    <p>Your Birthday will always be special to me because it's the day my favorite person was born. May God continue to bless you. Happy Birtday.</p>
+    
+  </div>
+  <audio controls autoplay loop>
+    <source src="music1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+ function playMusic() {
+      var audio = new Audio('music1.mp3');
+      audio.play();
+    }
+    var currentPage = 1;
+    setInterval(function() {
+      if (currentPage < 6) {
+        currentPage++;
+        document.getElementById('page' + currentPage).style.display = 'block';
+        document.getElementById('page' + (currentPage - 1)).style.display = 'none';
+      }
+    }, 1800);
+  </script>
+</body>
+</html>
